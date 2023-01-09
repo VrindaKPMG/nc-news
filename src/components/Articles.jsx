@@ -2,6 +2,7 @@ import getArticles from "../api";
 import { useEffect, useState } from "react";
 
 
+
 const Articles = () => {
     const [articles, setArticles] = useState([])
     const [isLoading, setIsLoading] = useState(true)
@@ -23,7 +24,7 @@ const Articles = () => {
             {articles.map((article) => <p key={article.article_id} >
                 <br />
                 <br />
-                 <h3>{article.title}</h3>
+                <span className="article_name"> <strong>{article.title}</strong></span> <br />
                  <span className="author">By <strong>{article.author}</strong></span>
                   <br />
                   <span className="tags">#{article.topic}</span>
