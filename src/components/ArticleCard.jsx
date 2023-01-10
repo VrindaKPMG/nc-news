@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import {getArticle} from "../api";
+import { Link } from "react-router-dom";
 
 
 
@@ -27,9 +28,10 @@ const ArticleCard = () => {
             <span> By {article.author}</span> <br />
              <span>VBC {article.topic} Correspondent</span> <br /><br />
                 <span className="article_content">{article.body} </span></p>
-            <button className="single_votes">❤ {article.votes}</button>
+            <button className="single_votes">❤ {article.votes}</button> <br /> <br />
 
-           
+            <button><Link to={`/articles/${article.article_id}/comments`}>View Comments</Link></button>
+
         </main>
     );
 

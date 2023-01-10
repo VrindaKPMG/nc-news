@@ -19,5 +19,11 @@ const getArticle = (article_id) => {
     })
 }
 
+const getComments = (article_id) => {
+    return myNewsApi.get(`/articles/${article_id}/comments`).then((res) => {
+        return res.data.comments
+    })
+}
 
-export {getArticles, getArticle};
+
+export {getArticles, getArticle, getComments};

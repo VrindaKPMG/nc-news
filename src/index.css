@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #ece4f0;
 }
 
 code {
@@ -38,4 +39,15 @@ h1 {
   padding: 0 50px 0 50px;
   margin-left: 50px;
   margin-right: 50px;
+}
+
+.comments_body{
+  padding: 0 70px 0 70px;
+  border: 1px solid #CCFCD1;
+  border-left: 50px;
+  border-right: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: #bdf0b9;
+
 }
