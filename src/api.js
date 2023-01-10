@@ -6,10 +6,18 @@ const myNewsApi = axios.create({
 
 
 const getArticles = () => {
-    return myNewsApi.get('/articles').then((res) => {
-        console.log(res.data.articles)
+    return myNewsApi.get(`/articles`).then((res) => {
+        
         return res.data.articles
     })
 }
 
-export default getArticles;
+const getArticle = (article_id) => {
+    return myNewsApi.get(`/articles/${article_id}`).then((res) => {
+        
+        return res.data.article
+    })
+}
+
+
+export {getArticles, getArticle};
