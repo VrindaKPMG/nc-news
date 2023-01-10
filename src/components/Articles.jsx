@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 
 
 const Articles = () => {
-    const [articles, setArticles] = useState([])
-    const [isLoading, setIsLoading] = useState(true)
+    const [articles, setArticles] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
     
 
 
@@ -23,7 +23,7 @@ const Articles = () => {
     if (isLoading) return <p>The latest juicy articles are on their way...</p>
     
     return (
-        <main> 
+        <main className="article_body"> 
             {articles.map((article) => <p key={article.article_id} >
                 <br />
                 <br />
@@ -33,7 +33,7 @@ const Articles = () => {
                   <br />
                   <span className="tags">#{article.topic}</span>
                   <br />
-                  <span className="votes">Votes: {article.votes}</span>
+                  <button className="votes">❤ {article.votes}</button>
                   <br />
                  
             </p>)

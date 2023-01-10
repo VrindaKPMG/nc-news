@@ -7,25 +7,28 @@ import {getArticle} from "../api";
 const ArticleCard = () => {
     
     const {article_id} = useParams();
-    const [article, setArticle] = useState([])
+    const [article, setArticle] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
+        setIsLoading(true)
         getArticle(article_id).then((article) => {
             setArticle(article)
-
+            setIsLoading(false)
         })
     }, [article_id])
 
+    if (isLoading) return <p>Your article will be with you in 3...2...1...</p>
 
     return (
-        <main>
+        <main className="single_article">
             <h2> {article.title}</h2>
-             <span> By {article.author}</span> <br />
-             <span>VBC {article.topic} Correspondent</span>
-            <p> {article.body}</p>
-            <button>❤ {article.votes}</button>
+            <p > 
+            <span> By {article.author}</span> <br />
+             <span>VBC {article.topic} Correspondent</span> <br /><br />
+                <span className="article_content">{article.body} </span></p>
+            <button className="single_votes">❤ {article.votes}</button>
 
-            
            
         </main>
     );
