@@ -12,4 +12,12 @@ const getArticles = () => {
     })
 }
 
-export default getArticles;
+const getArticle = (article_id) => {
+    return myNewsApi.get(`/articles/${article_id}`).then((res) => {
+        
+        return res.data.article
+    })
+}
+
+
+export {getArticles, getArticle};
