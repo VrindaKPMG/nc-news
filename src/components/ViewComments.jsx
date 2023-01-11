@@ -38,7 +38,7 @@ const ViewComments = () => {
             {comments.map((comment) => <article key={comment.comment_id}>
                 <strong>{comment.author}</strong> says...
                  <div className="comments_body">{comment.body}</div>
-                 <button>❤ {comment.votes}</button> <br /> <br />
+                 <button>💓 {comment.votes}</button> <br /> <br />
             </article>)}
         </main>
     )
