@@ -46,4 +46,14 @@ const postComment = (article_id, comment) => {
     })
 }
 
-export {getArticles, getArticle, getComments, patchArticle, postComment};
+const getTopics = () => {
+    return myNewsApi.get('/topics').then((res) => {
+        return res.data.topics
+    })
+}
+
+const getArticlesByTopic = () => {
+    return myNewsApi.get(``)
+}
+
+export {getArticles, getArticle, getComments, patchArticle, postComment, getTopics};

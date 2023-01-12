@@ -6,6 +6,7 @@ import Articles from './components/Articles';
 import Homepage from './components/Homepage';
 import ArticleCard from './components/ArticleCard';
 import ViewComments from './components/ViewComments';
+import Topics from './components/Topics';
 
 
 
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Homepage/>}></Route>
         <Route path='/articles' element={<Articles/>}>All Articles</Route>
+        <Route path='/topics' element={<Topics/>}>All Topics</Route>
         <Route path='/articles/:article_id' element={<ArticleCard/>}></Route>
         <Route path='/articles/:article_id/comments' element={<ViewComments/>}></Route>
       </Routes>

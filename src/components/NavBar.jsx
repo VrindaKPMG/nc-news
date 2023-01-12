@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 const NavBar = () => {
     return (
         <nav className="NavBar">
-            <span>All Topics</span>
+            <Link to="/topics">All Topics</Link>
             <span>    |     </span>
             <Link to="/articles">All Articles</Link>
             
