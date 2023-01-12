@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import {getArticle} from "../api";
 import { Link } from "react-router-dom";
 import { patchArticle } from "../api";
+import ViewComments from "./ViewComments";
 
 
 
@@ -64,9 +65,9 @@ const ArticleCard = () => {
             <button className="downsingle_votes" onClick={() => heartArticle(article.article_id, -1)}
             >💔</button>
             <br /> <br />
+            <br />
 
-            <button><Link to={`/articles/${article.article_id}/comments`}>View Comments</Link></button>
-
+            <ViewComments></ViewComments>
         </main>
     );
 

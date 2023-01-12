@@ -24,7 +24,7 @@ const Articles = () => {
     
     return (
         <main className="article_body"> 
-            {articles.map((article) => <p key={article.article_id} >
+            {articles.map((article) => <p key={article.article_id} className="all_articles" >
                 <br />
                 <br />
                 <Link to={`/articles/${article.article_id}`}> <span className="article_name"> <strong>{article.title}</strong></span></Link>

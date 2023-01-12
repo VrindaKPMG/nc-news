@@ -35,6 +35,15 @@ const patchArticle = (article_id, buttonValue) => {
     })
 }
 
+const postComment = (article_id, comment) => {
+    const postBody = {
+        username: 'jessjelly',
+        body: comment,
+    };
+    return myNewsApi.post(`/articles/${article_id}/comments`, postBody)
+    .then(({data}) => {
+        return data.article
+    })
+}
 
-
-export {getArticles, getArticle, getComments, patchArticle};
+export {getArticles, getArticle, getComments, patchArticle, postComment};
