@@ -5,9 +5,9 @@ const myNewsApi = axios.create({
 });
 
 
-const getArticles = () => {
-    return myNewsApi.get(`/articles`).then((res) => {
-        
+const getArticles = (topic) => {
+    
+    return myNewsApi.get('/articles', {params: {topic: topic}}).then((res) => {
         return res.data.articles
     })
 }
@@ -51,9 +51,6 @@ const getTopics = () => {
         return res.data.topics
     })
 }
-
-const getArticlesByTopic = () => {
-    return myNewsApi.get(``)
-}
+    
 
 export {getArticles, getArticle, getComments, patchArticle, postComment, getTopics};

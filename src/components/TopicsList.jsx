@@ -1,4 +1,4 @@
-
+import { getArticles } from "../api"
 
 
 const TopicsList = () => {
