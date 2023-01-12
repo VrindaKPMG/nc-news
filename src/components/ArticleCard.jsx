@@ -22,22 +22,6 @@ const ArticleCard = () => {
         })
     }, [article_id])
 
-    
-
-    // const heartArticle = (article_id) => {
-    //     setErr(null)
-        
-    //     setArticle((currArticle) => {
-    //         const for_votes = {...currArticle}
-    //              for_votes.votes ++
-    //             return for_votes
-    //     })
-    //     patchArticlePlus(article_id)
-    //     .catch((err) => {
-    //         setErr(true)
-    //     })
-
-    // }
 
     const heartArticle = (article_id, increment) => {
         
