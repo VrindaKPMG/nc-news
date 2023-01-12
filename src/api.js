@@ -25,5 +25,16 @@ const getComments = (article_id) => {
     })
 }
 
+const patchArticle = (article_id, buttonValue) => {
+    const patchBody = {
+        inc_votes: buttonValue,
+    };
+    return myNewsApi.patch(`/articles/${article_id}`, patchBody)
+    .then(({data}) => {
+        return data.article.votes
+    })
+}
 
-export {getArticles, getArticle, getComments};
+
+
+export {getArticles, getArticle, getComments, patchArticle};
