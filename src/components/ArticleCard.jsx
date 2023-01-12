@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import {getArticle} from "../api";
-import { Link } from "react-router-dom";
 import { patchArticle } from "../api";
 import ViewComments from "./ViewComments";
 

@@ -1,24 +1,25 @@
 import {getArticles} from "../api";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-
-
+import { Link, useSearchParams } from "react-router-dom";
 
 
 
 const Articles = () => {
     const [articles, setArticles] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    let [searchParams, setSearchParams] = useSearchParams();
     
 
+    const searchByTopic = searchParams.get(`topic`)
+    
 
     useEffect(() => {
         setIsLoading(true)
-        getArticles().then((article) => {
+        getArticles(searchByTopic).then((article) => {
             setArticles(article)
             setIsLoading(false)
         })
-    }, [])
+    }, [searchByTopic])
 
     if (isLoading) return <p>The latest juicy articles are on their way...</p>
     
@@ -39,7 +40,6 @@ const Articles = () => {
             </p>)
             }   
         </main>
-    )
-}
+    )}
 
 export default Articles;
