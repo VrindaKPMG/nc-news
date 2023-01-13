@@ -15,6 +15,7 @@ const ViewComments = () => {
     const [posterr, setPostErr] = useState(null);
     const [deleted, setDeleted] = useState(null);
     const [deleteerr, setDeleteErr] = useState(null);
+    const [user, setUser] = useState({username: 'jessjelly'})
 
 
 
@@ -102,7 +103,7 @@ const ViewComments = () => {
                 <strong>{comment.author}</strong> says...
                  <div className="comments_body">
                     {comment.body} <br />
-                     <button onClick={(e) => noComment(comment.comment_id)}>Delete</button>
+                    {comment.author === user.username ? <button onClick={(e) => noComment(comment.comment_id)}>Delete</button> : null}
                     </div>
                  <button>💓 {comment.votes}</button> <br /> <br /> <br />
                  
