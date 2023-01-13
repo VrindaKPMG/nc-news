@@ -51,6 +51,12 @@ const getTopics = () => {
         return res.data.topics
     })
 }
+
+const deleteComment = (comment_id) => {
+    return myNewsApi.delete(`/comments/${comment_id}`).then((res) => {
+        return res.data
+    })
+}
     
 
-export {getArticles, getArticle, getComments, patchArticle, postComment, getTopics};
+export {getArticles, getArticle, getComments, patchArticle, postComment, getTopics, deleteComment};
