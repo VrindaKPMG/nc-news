@@ -17,6 +17,7 @@ function App() {
       <NavBar/>
       <Routes>
         <Route path='/' element={<Homepage/>}></Route>
+        <Route path='*' element={<p>404: Not Found</p>}></Route>
         <Route path='/articles' element={<Articles/>}>All Articles</Route>
         <Route path='/topics' element={<Topics/>}>All Topics</Route>
         <Route path='/articles/:article_id' element={<ArticleCard/>}></Route>
