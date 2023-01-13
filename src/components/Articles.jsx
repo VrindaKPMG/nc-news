@@ -19,6 +19,11 @@ const Articles = () => {
     });
   }, [searchByTopic, sortBy, order]);
 
+  const dateFormat = () => {
+    Intl.DateTimeFormat('en-GB', {year: "numeric", month: '2-digit', day: '2-digit'})
+  }
+
+
 
 
   if (isLoading) return <p>The latest juicy articles are on their way...</p>;
@@ -49,13 +54,16 @@ const Articles = () => {
           <br />
           <span className="author">
             By <strong>{article.author}</strong>
-          </span>
+          </span> <br />
+          <span>On {article.created_at} </span>
+          
           <br />
           <span className="tags">#{article.topic}</span>
           <br />
           <button className="votes">❤ {article.votes}</button>
           <br />
-          <span>{article.comment_count} comments</span>
+
+          <Link to={`/articles/${article.article_id}/comments`}> <button> {article.comment_count} comments </button> </Link> 
         </p>
       ))}
     </main>
